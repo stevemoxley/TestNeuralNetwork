@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DC51DC6F-4808-4DC3-B03B-517413683251}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>TestNeuralNetwork</RootNamespace>
-    <AssemblyName>TestNeuralNetwork</AssemblyName>
+    <ProjectGuid>{D94A1EFD-8F10-425E-9976-EE87D8FDE5A0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Creature</RootNamespace>
+    <AssemblyName>Creature</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,27 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InputCSVParser.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Brain.cs" />
+    <Compile Include="Creature.cs" />
+    <Compile Include="NeuralNetworkInput.cs" />
+    <Compile Include="NeuralNetworkInputType.cs" />
+    <Compile Include="NeuralNetworkOutput.cs" />
+    <Compile Include="NeuralNetworkOutputType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Creature\Creature.csproj">
-      <Project>{d94a1efd-8f10-425e-9976-ee87d8fde5a0}</Project>
-      <Name>Creature</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NeuralNetwork\NeuralNet.csproj">
-      <Project>{62ba775a-514a-42c8-a208-8e20ed901fb7}</Project>
+      <Project>{62BA775A-514A-42C8-A208-8E20ED901FB7}</Project>
       <Name>NeuralNet</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="testNet.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
